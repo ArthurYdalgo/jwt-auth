@@ -26,12 +26,26 @@ trait DatetimeTrait
     protected $leeway = 0;
 
     /**
+     * @param  mixed  $value
+     * @param  int  $leeway
+     *
+     * @return void
+     */
+    public function __construct($value, $leeway = 0)
+    {
+        $this->leeway = $leeway;
+
+        parent::__construct($value);
+    }
+
+    /**
      * Set the claim value, and call a validate method.
      *
      * @param  mixed  $value
-     * @return $this
      *
      * @throws \Tymon\JWTAuth\Exceptions\InvalidClaimException
+     *
+     * @return $this
      */
     public function setValue($value)
     {
@@ -62,6 +76,7 @@ trait DatetimeTrait
      * Determine whether the value is in the future.
      *
      * @param  mixed  $value
+     *
      * @return bool
      */
     protected function isFuture($value)
@@ -73,6 +88,7 @@ trait DatetimeTrait
      * Determine whether the value is in the past.
      *
      * @param  mixed  $value
+     *
      * @return bool
      */
     protected function isPast($value)
@@ -84,6 +100,7 @@ trait DatetimeTrait
      * Set the leeway in seconds.
      *
      * @param  int  $leeway
+     *
      * @return $this
      */
     public function setLeeway($leeway)
