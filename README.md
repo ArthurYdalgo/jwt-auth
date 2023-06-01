@@ -9,6 +9,8 @@
 
 ## Documentation
 
+This is a fork from https://github.com/tymondesigns/jwt-auth
+
 [jwt-auth.com](https://jwt-auth.com)
 
 | jwt-auth version | Laravel version(s) |
